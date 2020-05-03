@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>页面布局1</title>
+    <style type="text/css">
+        *{ margin: 0;padding: 0; }
+        .container{width: 100%; margin-bottom: 50px; }
+        .box{ height: 400px; }
+        .left,.right{ width: 300px;}
+        .left{background: yellow; }
+        .right{background: aqua; }
+        .main{background: red;}
+    </style>
+</head>
+<body>
+<!--    题目：假设高度已知，请写出三栏布局，其中左栏、右栏高度各为300px，中间自适应
+        采用浮动的方法   -->
+    <section class="container-one">
+        <style>
+            .container-one .container{overflow: hidden; zoom: 1;}
+            .container-one .container .left{ float: left;}
+            .container-one .container .right{float: right;}
+        </style>
+        <article class="container">
+            <div class="box left"></div>
+            <div class="box right"></div>
+            <div class="box main">浮动解决方案<br/>这是浮动中间的内容</div>
+        </article>
+    </section>
+<!--采用定位的方法-->
+    <section class="container-two">
+        <style>
+            .container-two .container{ position: relative;height: 400px;}
+            .container-two .container .box{position: absolute}
+            .container-two .container .left{left: 0; }
+            .container-two .container .right{right:0; }
+            .container-two .container .main{ left:300px;right:300px; }
+        </style>
+        <article class="container">
+            <div class="box left"></div>
+            <div class="box right"></div>
+            <div class="box main">绝对定位解决方案<br/>这是绝对定位中间的内容</div>
+        </article>
+    </section>
+<!--采用flex布局(弹性布局)-->
+    <section class="container-three">
+        <style>
+            .container-three .container{display: flex;}
+            .container-three .container .main{flex: 1;}
+        </style>
+        <article class="container">
+            <div class="box left"></div>
+            <div class="box main">flex布局解决方案<br/>这是flex布局中间的内容</div>
+            <div class="box right"></div>
+        </article>
+    </section>
+<!--采用表格布局的方法-->
+    <section class="container-four">
+        <style>
+            .container-four .container{display: table;}
+            .container-four .container .box{display: table-cell;}
+        </style>
+        <article class="container">
+            <div class="box left"></div>
+            <div class="box main">表格布局解决方案<br/>这是表格布局中间的内容</div>
+            <div class="box right"></div>
+        </article>
+    </section>
+<!--采用网格布局的方法-->
+    <section class="container-five">
+        <style>
+            .container-five .container{
+                display: grid;
+                grid-template-columns: 300px auto 300px;
+            }
+        </style>
+        <article class="container">
+            <div class="box left"></div>
+            <div class="box main">网格布局解决方案<br/>这是网格布局中间的内容</div>
+            <div class="box right"></div>
+        </article>
+    </section>
+</body>
+</html>

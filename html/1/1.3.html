@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>页面布局1</title>
+    <style type="text/css">
+        *{ margin: 0;padding: 0; }
+        .container{width: 100%; margin-bottom: 50px; }
+        .box{ height: 400px; }
+        .left,.right{ width: 300px;}
+        .left{background: yellow; }
+        .right{background: aqua; }
+        .main{background: red;}
+    </style>
+</head>
+<body>
+<!--    题目：假设高度已知，请写出三栏布局，其中左栏、右栏高度各为300px，中间自适应
+        采用表格布局的方法
+-->
+    <section class="container-four">
+        <style>
+            .container-four .container{display: table;}
+            .container-four .container .box{display: table-cell;}
+        </style>
+        <article class="container">
+            <div class="box left"></div>
+            <div class="box main">绝对定位解决方案<br/>这是中间的内容</div>
+            <div class="box right"></div>
+        </article>
+    </section>
+
+</body>
+</html>

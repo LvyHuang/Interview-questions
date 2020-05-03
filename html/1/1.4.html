@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>页面布局1</title>
+    <style type="text/css">
+        *{ margin: 0;padding: 0; }
+        .container{width: 100%; margin-bottom: 50px; }
+        .box{ height: 400px; }
+        .left,.right{ width: 300px;}
+        .left{background: yellow; }
+        .right{background: aqua; }
+        .main{background: red;}
+    </style>
+</head>
+<body>
+<!--    题目：假设高度已知，请写出三栏布局，其中左栏、右栏高度各为300px，中间自适应
+        采用网格布局的方法
+-->
+    <section class="container-five">
+        <style>
+            .container-five .container{
+                display: grid;
+                /*grid-template-rows: 400px;*/
+                grid-template-columns: 300px auto 300px;
+            }
+        </style>
+        <article class="container">
+            <div class="box left"></div>
+            <div class="box main">网格布局解决方案<br/>这是网格布局中间的内容</div>
+            <div class="box right"></div>
+        </article>
+    </section>
+
+</body>
+</html>
